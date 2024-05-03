@@ -24,7 +24,7 @@ import java.awt.event.*;
             frame.setLayout(null);
 
             textfield = new JTextField();
-            textfield.setBounds(50,25,300,50);
+            textfield.setBounds(100,25,300,50);
             textfield.setFont(myFont);
             textfield.setEditable(false);
 
