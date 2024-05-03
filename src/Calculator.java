@@ -28,6 +28,26 @@ import java.awt.event.*;
             textfield.setFont(myFont);
             textfield.setEditable(false);
 
+            addButton = new JButton("+");
+            subButton = new JButton("-");
+            mulButton = new JButton("*");
+            divButton = new JButton("/");
+            decButton = new JButton(".");
+            equButton = new JButton("=");
+            delButton = new JButton("DELETE");
+            clrButton = new JButton("CLEAR");
+
+            functionButtons[0] = addButton;
+            functionButtons[1] = subButton;
+            functionButtons[2] = mulButton;
+            functionButtons[3] = divButton;
+            functionButtons[4] = decButton;
+            functionButtons[5] = equButton;
+            functionButtons[6] = delButton;
+            functionButtons[7] = clrButton;
+            functionButtons[8] = negButton;
+
+
 
             frame.add(textfield);
             frame.setVisible(true); // Move this line here
