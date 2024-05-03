@@ -64,7 +64,7 @@ import java.awt.event.*;
 
             panel = new JPanel();
             panel.setBounds(50,100,300, 300);
-            panel.setLayout(new GridLayout(4,4,10,10));
+            panel.setLayout(new GridLayout(4, 4, 10, 10));
 
             panel.add(numberButtons[1]);
             panel.add(numberButtons[2]);
@@ -95,6 +95,70 @@ import java.awt.event.*;
 
         @Override
         public void actionPerformed(ActionEvent e) {
+            for(int i=0;i<10;i++) {
+                if(e.getSource() == numberButtons[i]) {
+                    //kill me
+                    textfield.setText(textfield.getText().concat(String.valueOf(i)));
+                }
+            }
+            if(e.getSource()==decButton) {
+                textfield.setText(textfield.getText().concat("."));
+            }
+            if(e.getSource()==addButton) {
+                num1 = Double.parseDouble(textfield.getText());
+                operator ='+';
+                textfield.setText("");
+            }
+            if(e.getSource()==subButton) {
+                num1 = Double.parseDouble(textfield.getText());
+                operator ='-';
+                textfield.setText("");
+            }
+            if(e.getSource()==mulButton) {
+                num1 = Double.parseDouble(textfield.getText());
+                operator ='*';
+                textfield.setText("");
+            }
+            if(e.getSource()==divButton) {
+                num1 = Double.parseDouble(textfield.getText());
+                operator ='/';
+                textfield.setText("");
+            }
+            if(e.getSource()==equButton) {
+                num2=Double.parseDouble(textfield.getText());
+
+                switch(operator) {
+                    case'+':
+                        result=num1+num2;
+                        break;
+                    case'-':
+                        result=num1-num2;
+                        break;
+                    case'*':
+                        result=num1*num2;
+                        break;
+                    case'/':
+                        result=num1/num2;
+                        break;
+                }
+                textfield.setText(String.valueOf(result));
+                num1=result;
+            }
+            if(e.getSource()==clrButton) {
+                textfield.setText("");
+            }
+            if(e.getSource()==delButton) {
+                String string = textfield.getText();
+                textfield.setText("");
+                for(int i=0;i<string.length()-1;i++) {
+                    textfield.setText(textfield.getText()+string.charAt(i));
+                }
+            }
+            if(e.getSource()==negButton) {
+                double temp = Double.parseDouble(textfield.getText());
+                temp*=-1;
+                textfield.setText(String.valueOf(temp));
+            }
 
         }
     }
