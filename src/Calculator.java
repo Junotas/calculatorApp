@@ -11,7 +11,7 @@ import java.awt.event.*;
         JButton decButton, equButton, delButton, clrButton, negButton;
         JPanel panel;
 
-        Font myFont = new Font("INK FREE", Font.BOLD, 30);
+        Font myFont = new Font("INK FREE", Font.BOLD, 28);
 
         double num1=0, num2=0,result=0;
         char operator;
@@ -34,7 +34,7 @@ import java.awt.event.*;
             divButton = new JButton("/");
             decButton = new JButton(".");
             equButton = new JButton("=");
-            delButton = new JButton("DELETE");
+            delButton = new JButton("Delete");
             clrButton = new JButton("CLEAR");
 
             functionButtons[0] = addButton;
@@ -59,9 +59,12 @@ import java.awt.event.*;
                 numberButtons[i].setFocusable(false);
 
             }
+            delButton.setBounds(50,430,145,50);
+            clrButton.setBounds(205,430,145,50);
 
 
-
+            frame.add(delButton);
+            frame.add(clrButton);
             frame.add(textfield);
             frame.setVisible(true); // Move this line here
         }
