@@ -45,7 +45,13 @@ import java.awt.event.*;
             functionButtons[5] = equButton;
             functionButtons[6] = delButton;
             functionButtons[7] = clrButton;
-            functionButtons[8] = negButton;
+
+            for (int i = 0; i < 8; i++) {
+                functionButtons[i].addActionListener(this);
+                functionButtons[i].setFont(myFont);
+                functionButtons[i].setFocusable(false);
+
+            }
 
 
 
