@@ -53,6 +53,13 @@ import java.awt.event.*;
 
             }
 
+            for (int i = 0; i < 10; i++) {
+                numberButtons[i] = new JButton(String.valueOf(i));
+                numberButtons[i].setFont(myFont);
+                numberButtons[i].setFocusable(false);
+
+            }
+
 
 
             frame.add(textfield);
