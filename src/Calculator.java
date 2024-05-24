@@ -55,12 +55,10 @@ class Calculator implements ActionListener{
             functionButtons[i].setFocusable(false);
         }
 
-        for(int i =0;i<10;i++) {
-            numberButtons[i] = new JButton(String.valueOf(i));
-            numberButtons[i].addActionListener(this);
-            numberButtons[i].setFont(myFont);
-            numberButtons[i].setFocusable(false);
-        }
+        JButton zeroButton = new JButton("0");
+        zeroButton.addActionListener(this);
+        zeroButton.setFont(myFont);
+        zeroButton.setFocusable(false);
 
         negButton.setBounds(50,430,100,50);
         delButton.setBounds(150,430,100,50);
@@ -71,12 +69,16 @@ class Calculator implements ActionListener{
         panel.setLayout(new GridLayout(4,4,10,10));
 
         for(int i = 1; i < 10; i++) {
-            panel.add(numberButtons[i]);
+            JButton btn = new JButton(Integer.toString(i));
+            btn.addActionListener(this);
+            btn.setFont(myFont);
+            btn.setFocusable(false);
+            panel.add(btn);
             if(i % 3 == 0) panel.add(functionButtons[i / 3 - 1]);
         }
 
         panel.add(decButton);
-        panel.add(numberButtons[0]);
+        panel.add(zeroButton);
         panel.add(equButton);
         panel.add(divButton);
 
