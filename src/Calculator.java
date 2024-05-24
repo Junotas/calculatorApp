@@ -90,16 +90,26 @@ class Calculator implements ActionListener{
         frame.setVisible(true);
     }
 
+    private boolean isNumeric(String sourceText) {
+        try {
+            Integer.parseInt(sourceText);
+            return true;
+        } catch(NumberFormatException e) {
+            return false;
+        }
+    }
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        for(int i=0;i<10;i++) {
-            if(e.getSource() == numberButtons[i]) {
-                //kill me
-                textfield.setText(textfield.getText().concat(String.valueOf(i)));
-            }
+        JButton source = (JButton) e.getSource();
+        String sourceText = source.getText();
+
+        if(isNumeric(sourceText)) {
+            textfield.setText(textfield.getText().concat(sourceText));
         }
+
         if(e.getSource()==decButton) {
             textfield.setText(textfield.getText().concat("."));
         }
