@@ -24,7 +24,6 @@ class Calculator implements ActionListener {
         frame.setSize(840, 550);
         frame.setLayout(new BorderLayout());
 
-        // Calculator Panel
         JPanel calculatorPanel = new JPanel();
         calculatorPanel.setLayout(null);
 
